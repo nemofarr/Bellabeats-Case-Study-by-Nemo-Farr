@@ -218,12 +218,16 @@ SELECT
 FROM
 	bellabeat.dbo.sleep_day
 ```
+Results show 24 users tracked sleep minutes with values of:  
+- 7 hours average
+- 1 hour minimum
+- 13 hours maximum  
+7 hours of sleep minimum is the recommended for adults.  
+Source: [CDC.org](https://www.cdc.gov/sleep/about_sleep/how_much_sleep.html)  
 
-
-
-
+Calculating weight averages:
 ```
---4) Tracking Weight
+-- Tracking Weight
 SELECT
 	COUNT(DISTINCT Id) AS users_tracking_weight,
 	AVG(WeightPounds) AS avg_weight,
@@ -233,6 +237,10 @@ SELECT
 FROM
 	bellabeat.dbo.weight_cleaned
 ```
+Results show 8 users tracked weight with values of:
+- 159 lbs average
+- 116 lbs minimum
+- 294 lbs maximum
 
 # Share - Presentation 
 
