@@ -181,11 +181,11 @@ FROM
 Results show 33 users tracked their daily activity with averages of:  
 - 7637 steps per day  
 - 5.4 kilometers per day  
-- 2304 calories per day
+- 2304 calories per day  
 6-8.k steps per day (4.3 - 6.1 km per day) recommended for standard health maintanence.  
 Source: [National Library of Medicine](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3169444/)  
 
-Calculate average heart rates
+Calculate average heart rates:
 ```
 -- Tracking heart rate
 SELECT
@@ -197,15 +197,15 @@ SELECT
 FROM
 	bellabeat.dbo.heartrate_seconds
 ```
-Results show 14 users tracked heart rates with values of:
-77 bpm average
-36 bpm minimum
-203 bpm maximum
+Results show 14 users tracked heart rates with values of:  
+- 77 bpm average  
+- 36 bpm minimum  
+- 203 bpm maximum  
 Target heart rate for moderate-intense physical activity should be between 64% and 76% of maximum heart rate.  
-Calculation for max heart rate: 220 - (age) = BPM. 
+Calculation for max heart rate: 220 - (age) = BPM.  
 Source: [CDC.gov](https://www.cdc.gov/physicalactivity/basics/measuring/heartrate.htm)  
 
-Calculate sleep averages:
+Calculate sleep averages:  
 ```
 -- Tracking Sleep
 SELECT
