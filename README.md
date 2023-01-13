@@ -242,6 +242,80 @@ Results show 8 users tracked weight with values of:
 - 116 lbs minimum
 - 294 lbs maximum
 
+Calculate number of days each user tracked physical activity:
+```
+SELECT
+	DISTINCT Id,
+	COUNT(ActivityDate) OVER (PARTITION BY Id) AS days_activity_recorded
+
+FROM
+	bellabeat.dbo.daily_activity_cleaned 
+
+ORDER BY
+	days_activity_recorded DESC
+```
+24 users tracked for 30-31 days. 8 users tracked for 18-29 days. 1 user tracked for 4 days.  
+
+Calculate average time for each activity:
+```
+SELECT
+	ROUND(AVG(VeryActiveMinutes),2) AS Avg_VeryActiveMinutes,
+	ROUND(AVG(FairlyActiveMinutes),2) AS Avg_FairlyActiveMinutes,
+	ROUND(AVG(LightlyActiveMintues)/60.0,2) AS Avg_LightlyActiveHours,
+	ROUND(AVG(SedentaryMintues)/60.0,2) AS Avg_SedentaryHours
+
+FROM
+	bellabeat.dbo.daily_activity_cleaned
+```
+21 min - Very Active
+13 min - Farily Active
+3.2 hours - Lightly Active
+16.5 hours - Sedentary 
+
+Calculate time when users were most active:
+```
+SELECT
+	DISTINCT (CAST(ActivityHour AS TIME)) AS activity_time,
+	AVG(CAST(TotalIntensity AS INT)) OVER (PARTITION BY DATEPART(HOUR, ActivityHour)) AS avg_intensity,
+	AVG(METs/10.0) OVER (PARTITION BY DATEPART(HOUR, ActivityHour)) AS avg_METs
+FROM
+	bellabeat.dbo.hourly_intensities AS hourly_activity
+
+JOIN bellabeat.dbo.minuteMETs AS METs
+
+ON
+	hourly_activity.Id = METs.Id
+
+ORDER BY
+	avg_intensity DESC 
+
+```
+activity_time      avg_intensity  avg_METs  
+17:00:00.0000000	22	1.471263  
+18:00:00.0000000	22	1.471263  
+19:00:00.0000000	21	1.471263  
+12:00:00.0000000	19	1.471637  
+13:00:00.0000000	18	1.471497  
+14:00:00.0000000	18	1.471497  
+16:00:00.0000000	17	1.471103  
+10:00:00.0000000	17	1.471533  
+11:00:00.0000000	16	1.471826  
+15:00:00.0000000	15	1.470643  
+09:00:00.0000000	15	1.471239  
+08:00:00.0000000	14	1.471239  
+20:00:00.0000000	14	1.471263  
+21:00:00.0000000	12	1.471041  
+07:00:00.0000000	10	1.471239  
+22:00:00.0000000	9	1.471219  
+06:00:00.0000000	7	1.471239  
+05:00:00.0000000	5	1.471303 
+23:00:00.0000000	5	1.471320  
+00:00:00.0000000	2	1.471440  
+01:00:00.0000000	1	1.471233  
+02:00:00.0000000	1	1.471233  
+03:00:00.0000000	0	1.471233  
+04:00:00.0000000	0	1.471303  
+
 # Share - Presentation 
 
 # Act - Recommendations   
