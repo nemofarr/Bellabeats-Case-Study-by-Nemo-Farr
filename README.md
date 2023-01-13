@@ -40,7 +40,8 @@ Data Characteristics:
 
 Data Limitations:
 - Not all metrics were tracked by all users, more comprehensive tracking is preferred. 
-- Data was captured in 2016 and is not current. Analysis will provide general trends but current tracking data is required for accuracy. 
+- Data was captured in 2016 and is not current. Analysis will provide general trends but current tracking data is required for accuracy.  
+- Ages and demographic information not included preventing more detailed analysis.  
 
 # Process - Data Cleaning
 
@@ -56,7 +57,8 @@ Files used:
 - sleepDay_merged.csv
 - weightLogInfo_merged.csv
 
-Import files into Microsoft SQL Server Management Studio for cleaning and transformation as bellabeat.dbo.'tables'
+Import files into Microsoft SQL Server Management Studio for cleaning and transformation as bellabeat.dbo.'tables'  
+
 Cast columns as Float and Integer types to perform calculations:
 ```
 -- Cast daily_activity table
@@ -162,9 +164,75 @@ FROM bellabeat.dbo.weight_cleaned
 -- 24
 -- 8
 ```
-
-
 # Analyze - Data Analysis  
+
+Calculate average daily activity:
+```
+-- Tracking physical activities
+SELECT
+	COUNT(DISTINCT Id) AS users_tracking_activity,
+	AVG(TotalSteps) AS avg_steps,
+	AVG(TotalDistance) AS avg_distance,
+	AVG(Calories) AS avg_calories
+
+FROM 
+	bellabeat.dbo.daily_activity_cleaned
+```
+Results show 33 users tracked their daily activity with averages of:  
+- 7637 steps per day  
+- 5.4 kilometers per day  
+- 2304 calories per day
+6-8.k steps per day (4.3 - 6.1 km per day) recommended for standard health maintanence.  
+Source: [National Library of Medicine](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3169444/)  
+
+Calculate average heart rates
+```
+-- Tracking heart rate
+SELECT
+	COUNT(DISTINCT Id) AS user_tracking_heartRate,
+	AVG(Value) AS avg_heartRate,
+	MIN(Value) AS min_heartRate,
+	MAX(Value) AS max_heartRate
+
+FROM
+	bellabeat.dbo.heartrate_seconds
+```
+Results show 14 users tracked heart rates with values of:
+77 bpm average
+36 bpm minimum
+203 bpm maximum
+Target heart rate for moderate-intense physical activity should be between 64% and 76% of maximum heart rate.  
+Calculation for max heart rate: 220 - (age) = BPM. 
+Source: [CDC.gov](https://www.cdc.gov/physicalactivity/basics/measuring/heartrate.htm)  
+
+Calculate sleep averages:
+```
+-- Tracking Sleep
+SELECT
+	COUNT(DISTINCT Id) AS users_tracking_sleep,
+	AVG(TotalMinutesAsleep)/60.0 AS avg_hours_asleep,
+	MIN(TotalMinutesAsleep)/60.0 AS min_hours_asleep,
+	MAX(TotalMinutesAsleep)/60.0 AS max_hours_asleep,
+	AVG(TotalTimeInBed)/60.0 AS avg_hours_inBed
+
+FROM
+	bellabeat.dbo.sleep_day
+```
+
+
+
+
+```
+--4) Tracking Weight
+SELECT
+	COUNT(DISTINCT Id) AS users_tracking_weight,
+	AVG(WeightPounds) AS avg_weight,
+	MIN(WeightPounds) AS min_weight,
+	MAX(WeightPounds) AS max_weight
+
+FROM
+	bellabeat.dbo.weight_cleaned
+```
 
 # Share - Presentation 
 
