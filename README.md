@@ -182,7 +182,7 @@ Results show 33 users tracked their daily activity with averages of:
 - 7637 steps per day  
 - 5.4 kilometers per day  
 - 2304 calories per day  
-6-8.k steps per day (4.3 - 6.1 km per day) recommended for standard health maintanence.  
+6000-8000 steps per day (4.3 - 6.1 km per day) recommended for standard health maintanence.  
 Source: [National Library of Medicine](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3169444/)  
 
 Calculate average heart rates:
