@@ -203,7 +203,7 @@ Results show 14 users tracked heart rates with values of:
 - 203 bpm maximum  
 Target heart rate for moderate-intense physical activity should be between 64% and 76% of maximum heart rate.  
 Calculation for max heart rate: 220 - (age) = BPM.  
-Source: [CDC.gov](https://www.cdc.gov/physicalactivity/basics/measuring/heartrate.htm)  
+Source: [CDC.gov/physicalactivity](https://www.cdc.gov/physicalactivity/basics/measuring/heartrate.htm)  
 
 Calculate sleep averages:  
 ```
@@ -223,7 +223,7 @@ Results show 24 users tracked sleep minutes with values of:
 - 1 hour minimum
 - 13 hours maximum  
 7 hours of sleep minimum is the recommended for adults.  
-Source: [CDC.org](https://www.cdc.gov/sleep/about_sleep/how_much_sleep.html)  
+Source: [CDC.gov/sleep](https://www.cdc.gov/sleep/about_sleep/how_much_sleep.html)  
 
 Calculating weight averages:
 ```
