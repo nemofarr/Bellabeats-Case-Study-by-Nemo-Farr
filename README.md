@@ -290,7 +290,13 @@ ORDER BY
 	avg_intensity DESC 
 
 ```
+On average the hours of intensity minutes are:   
+- Very Active intensity hours are from 12:00 - 14:00 and 17:00-19:00    
+- Fairly Active intensity hours are from 8:00-11:00, 15:00-16:00, and 20:00-21:00  
+- Lightly Active intensity hours are from 6:00-7:00, and 22:00  
+- Sedentary intensity hours are from 23:00 - 5:00  
 
+Users exercise typically around Noon or Evening, are Fairly active most of the day, Lightly active in the hour waking up and falling asleep. 
 
 # Share - Presentation 
 
