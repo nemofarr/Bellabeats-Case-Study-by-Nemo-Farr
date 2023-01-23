@@ -300,5 +300,9 @@ Users exercise typically around Noon or Evening, are Fairly active most of the d
 
 # Share - Presentation 
 
+[Dashboard of Data Visualizations](https://public.tableau.com/app/profile/nemo.farr/viz/BellabeatAnalysisDashboard-NemoFarr/Dashboard?publish=yes)  
+
+[Presentation of Data]
+
 # Act - Recommendations   
 
