@@ -300,9 +300,27 @@ Users exercise typically around Noon or Evening, are Fairly active most of the d
 
 # Share - Presentation 
 
-[Dashboard of Data Visualizations](https://public.tableau.com/app/profile/nemo.farr/viz/BellabeatAnalysisDashboard-NemoFarr/Dashboard?publish=yes)  
+[Dashboard of Data Visualizations](https://public.tableau.com/app/profile/nemo.farr/viz/Dashboard-BellabeatsCaseStudy/Dashboard?publish=yes)  
 
-[Presentation of Data]
+[Presentation of Data](https://docs.google.com/presentation/d/1IT3AP49pJlgteazzwaz1BRMaWf_wn_MWFupA0eB2nzc/edit?usp=sharing)
 
-# Act - Recommendations   
+# Act - Recommendations 
 
+1) Introduce a Sleep oriented Marketing Campaign. Tracking sleep is the most popular metric for users.  
+Example: Getting enough sleep every night leads to more energy, more activity, and more weight loss. Target to sell sleep tracking products.  
+
+2) Introduce a Peak Activity Marketing Campaign. Incentives for activity tracking during typically sedentary hours or days.  
+Example: Users who track an activity during a “Peak Activity” hour receive triple points towards the online store, or coaching. Increase engagement.  
+
+3) Time and geography based reminder program to increase usage.  
+Example: Receive an alert during a less active time of day with a nearby location recommendation for a short walk. 
+
+Conclusion:
+Data analysis of FitBit users over a 30 day period has provided valuable insights for the Bellabeat marketing team. In order to provider more in depth analysis, below are my considerations for future analysis:  
+- Age range of users  
+- Type of device worn  
+- Menstrual tracking data  
+- Geographic location data  
+- Survey of women comparing standard fitness tracking device to Bellabeat devices  
+
+Thank you for your time. - Nemo
